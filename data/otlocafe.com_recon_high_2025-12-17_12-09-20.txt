@@ -1,0 +1,544 @@
+VAPT AUTOMATED SECURITY ASSESSMENT REPORT
+======================================================================
+Target      : otlocafe.com
+Assessment  : RECON-HIGH
+Generated   : 2025-12-17_12-09-20
+======================================================================
+
+[TECH STACK FINGERPRINTING (WHATWEB - AGGRESSIVE)]
+WhatWeb report for http://otlocafe.com
+Status    : 301 Moved Permanently
+Title     : ,301 Moved Permanently
+IP        : 91.108.106.131
+Country   : GERMANY, DE
+
+Summary   : HTML5, HTTPServer[hcdn], RedirectLocation[https://otlocafe.com/], UncommonHeaders[platform,panel,content-security-policy,alt-svc,x-hcdn-request-id,x-hcdn-cache-status,x-hcdn-upstream-rt]
+
+Detected Plugins:
+[ HTML5 ]
+	HTML version 5, detected by the doctype declaration 
+
+
+[ HTTPServer ]
+	HTTP server header string. This plugin also attempts to 
+	identify the operating system from the server header. 
+
+	String       : hcdn (from server string)
+
+[ RedirectLocation ]
+	HTTP Server string location. used with http-status 301 and 
+	302 
+
+	String       : https://otlocafe.com/ (from location)
+
+[ UncommonHeaders ]
+	Uncommon HTTP server headers. The blacklist includes all 
+	the standard headers and many non standard but common ones. 
+	Interesting but fairly common headers should have their own 
+	plugins, eg. x-powered-by, server and x-aspnet-version. 
+	Info about headers can be found at www.http-stats.com 
+
+	String       : platform,panel,content-security-policy,alt-svc,x-hcdn-request-id,x-hcdn-cache-status,x-hcdn-upstream-rt (from headers)
+
+HTTP Headers:
+	HTTP/1.1 301 Moved Permanently
+	Date: Wed, 17 Dec 2025 06:39:22 GMT
+	Content-Type: text/html
+	Content-Length: 795
+	Connection: close
+	Location: https://otlocafe.com/
+	platform: hostinger
+	panel: hpanel
+	Content-Security-Policy: upgrade-insecure-requests
+	Server: hcdn
+	alt-svc: h3=":443"; ma=86400
+	x-hcdn-request-id: d25c0477695e21c153f41e371ae48841-mum-edge9
+	x-hcdn-cache-status: MISS
+	x-hcdn-upstream-rt: 0.160
+	
+WhatWeb report for https://otlocafe.com
+Status    : 403 Forbidden
+Title     : ,403 Forbidden
+IP        : 91.108.106.131
+Country   : GERMANY, DE
+
+Summary   : HTML5, HTTPServer[hcdn], UncommonHeaders[platform,panel,content-security-policy,alt-svc,x-hcdn-request-id]
+
+Detected Plugins:
+[ HTML5 ]
+	HTML version 5, detected by the doctype declaration 
+
+
+[ HTTPServer ]
+	HTTP server header string. This plugin also attempts to 
+	identify the operating system from the server header. 
+
+	String       : hcdn (from server string)
+
+[ UncommonHeaders ]
+	Uncommon HTTP server headers. The blacklist includes all 
+	the standard headers and many non standard but common ones. 
+	Interesting but fairly common headers should have their own 
+	plugins, eg. x-powered-by, server and x-aspnet-version. 
+	Info about headers can be found at www.http-stats.com 
+
+	String       : platform,panel,content-security-policy,alt-svc,x-hcdn-request-id (from headers)
+
+HTTP Headers:
+	HTTP/1.1 403 Forbidden
+	Date: Wed, 17 Dec 2025 06:39:22 GMT
+	Content-Type: text/html
+	Content-Length: 787
+	Connection: close
+	Vary: Accept-Encoding
+	Cache-Control: private, no-cache, no-store, must-revalidate, max-age=0
+	Pragma: no-cache
+	platform: hostinger
+	panel: hpanel
+	Content-Security-Policy: upgrade-insecure-requests
+	Server: hcdn
+	alt-svc: h3=":443"; ma=86400
+	x-hcdn-request-id: 9618c2a6e2449a1b1b8b1c98ab1b44e5-mum-edge7
+	
+WhatWeb report for https://otlocafe.com/
+Status    : 403 Forbidden
+Title     : ,403 Forbidden
+IP        : 91.108.106.131
+Country   : GERMANY, DE
+
+Summary   : HTML5, HTTPServer[hcdn], UncommonHeaders[platform,panel,content-security-policy,alt-svc,x-hcdn-request-id]
+
+Detected Plugins:
+[ HTML5 ]
+	HTML version 5, detected by the doctype declaration 
+
+
+[ HTTPServer ]
+	HTTP server header string. This plugin also attempts to 
+	identify the operating system from the server header. 
+
+	String       : hcdn (from server string)
+
+[ UncommonHeaders ]
+	Uncommon HTTP server headers. The blacklist includes all 
+	the standard headers and many non standard but common ones. 
+	Interesting but fairly common headers should have their own 
+	plugins, eg. x-powered-by, server and x-aspnet-version. 
+	Info about headers can be found at www.http-stats.com 
+
+	String       : platform,panel,content-security-policy,alt-svc,x-hcdn-request-id (from headers)
+
+HTTP Headers:
+	HTTP/1.1 403 Forbidden
+	Date: Wed, 17 Dec 2025 06:39:26 GMT
+	Content-Type: text/html
+	Content-Length: 787
+	Connection: close
+	Vary: Accept-Encoding
+	Cache-Control: private, no-cache, no-store, must-revalidate, max-age=0
+	Pragma: no-cache
+	platform: hostinger
+	panel: hpanel
+	Content-Security-Policy: upgrade-insecure-requests
+	Server: hcdn
+	alt-svc: h3=":443"; ma=86400
+	x-hcdn-request-id: 36747bf044d58a48bd10218cc60bfc2c-mum-edge6
+----------------------------------------------------------------------
+
+[WAF DETECTION (WAFW00F)]
+______
+               /      \
+              (  W00f! )
+               \  ____/
+               ,,    __            404 Hack Not Found
+           |`-.__   / /                      __     __
+           /"  _/  /_/                       \ \   / /
+          *===*    /                          \ \_/ /  405 Not Allowed
+         /     )__//                           \   /
+    /|  /     /---`                        403 Forbidden
+    \\/`   \ |                                 / _ \
+    `\    /_\\_              502 Bad Gateway  / / \ \  500 Internal Error
+      `_____``-`                             /_/   \_\\
+
+                        ~ WAFW00F : v2.3.1 ~
+        The Web Application Firewall Fingerprinting Toolkit
+    
+[*] Checking https://otlocafe.com
+[+] Generic Detection results:
+[-] No WAF detected by the generic detection
+[~] Number of requests: 7
+----------------------------------------------------------------------
+
+[HTTP METADATA & ALIVE CHECK (HTTPX)]
+https://otlocafe.com [200] [] [Otlo Cafe - Premium Coffee Experience] [hcdn] [88.222.243.187] [602.80784ms] [PHP]
+----------------------------------------------------------------------
+
+[SSL/TLS CHECK (SSLYZE)]
+/usr/lib/python3/dist-packages/sslyze/plugins/certificate_info/trust_stores/trust_store.py:55: CryptographyDeprecationWarning: Parsed a serial number which wasn't positive (i.e., it was negative or zero), which is disallowed by RFC 5280. Loading this certificate will cause an exception in a future release of cryptography.
+  self._x509_store = Store(load_pem_x509_certificates(self.path.read_bytes()))
+
+ CHECKING CONNECTIVITY TO SERVER(S)
+ ----------------------------------
+
+   otlocafe.com:443          => 93.127.173.166 
+
+
+ SCAN RESULTS FOR OTLOCAFE.COM:443 - 93.127.173.166
+ --------------------------------------------------
+
+ * Certificates Information:
+       Hostname sent for SNI:             otlocafe.com
+       Number of cert chains detected:    1 (RSAPublicKey)
+       Cert chain with SNI disabled:      No
+
+
+     Certificate Chain #1 (RSAPublicKey, SNI enabled)
+       SHA1 Fingerprint:                  e17c031ae9f2038e7951c00fbd4e7e13857ed15b
+       Common Name:                       otlocafe.com
+       Issuer:                            R13
+       Serial Number:                     438824083676575927983423796969505403381996
+       Not Before:                        2025-12-12
+       Not After:                         2026-03-12
+       Public Key Algorithm:              RSAPublicKey
+       Signature Algorithm:               sha256
+       Key Size:                          4096
+       Exponent:                          65537
+       SubjAltName - DNS Names:           ['otlocafe.com', 'www.otlocafe.com']
+     Trust
+       Android CA Store (16.0.0_r2):      OK - Certificate is trusted
+       Apple CA Store (iOS 18, iPadOS 18, macOS 15, tvOS 18, visionOS 2 and watchOS 11):OK - Certificate is trusted
+       Java CA Store (jdk-13.0.2):        OK - Certificate is trusted
+       Mozilla CA Store (2025-07-27):     OK - Certificate is trusted
+       Windows CA Store (2025-07-27):     OK - Certificate is trusted
+       Symantec 2018 Deprecation:         OK - Not a Symantec-issued certificate
+       Received Chain:                    otlocafe.com --> R13
+       Verified Chain:                    otlocafe.com --> R13 --> ISRG Root X1
+       Received Chain Contains Anchor:    OK - Anchor certificate not sent
+       Received Chain Order:              OK - Order is valid
+       Verified Chain contains SHA1:      OK - No SHA1-signed certificate in the verified certificate chain
+     Certificate Extensions
+       OCSP Must-Staple:                  NOT SUPPORTED - Extension not found
+       Certificate Transparency:          WARNING - Only 2 SCTs included but Google recommends 3 or more
+     OCSP Stapling
+                                          NOT SUPPORTED - Server did not send back an OCSP response
+
+ * SSL 2.0 Cipher Suites:
+     Attempted to connect using 7 cipher suites; the server rejected all cipher suites.
+
+ * SSL 3.0 Cipher Suites:
+     Attempted to connect using 80 cipher suites; the server rejected all cipher suites.
+
+ * TLS 1.0 Cipher Suites:
+     Attempted to connect using 80 cipher suites; the server rejected all cipher suites.
+
+ * TLS 1.1 Cipher Suites:
+     Attempted to connect using 80 cipher suites; the server rejected all cipher suites.
+
+ * TLS 1.2 Cipher Suites:
+     Attempted to connect using 156 cipher suites.
+
+     The server accepted the following 5 cipher suites:
+        TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256       256       ECDH: X25519 (253 bits)
+        TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384             256       ECDH: prime256v1 (256 bits)
+        TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256             128       ECDH: prime256v1 (256 bits)
+        TLS_DHE_RSA_WITH_AES_256_GCM_SHA384               256       DH (2048 bits) 
+        TLS_DHE_RSA_WITH_AES_128_GCM_SHA256               128       DH (2048 bits) 
+
+     The group of cipher suites supported by the server has the following properties:
+       Forward Secrecy                    OK - Supported
+       Legacy RC4 Algorithm               OK - Not Supported
+
+
+ * TLS 1.3 Cipher Suites:
+     Attempted to connect using 5 cipher suites.
+
+     The server accepted the following 3 cipher suites:
+        TLS_CHACHA20_POLY1305_SHA256                      256       ECDH: X25519 (253 bits)
+        TLS_AES_256_GCM_SHA384                            256       ECDH: X25519 (253 bits)
+        TLS_AES_128_GCM_SHA256                            128       ECDH: X25519 (253 bits)
+
+
+ * Deflate Compression:
+                                          OK - Compression disabled
+
+ * OpenSSL CCS Injection:
+                                          OK - Not vulnerable to OpenSSL CCS injection
+
+ * Downgrade Attacks:
+       TLS_FALLBACK_SCSV:                 OK - Supported
+
+ * OpenSSL Heartbleed:
+                                          OK - Not vulnerable to Heartbleed
+
+ * ROBOT Attack:
+                                          OK - Not vulnerable, RSA cipher suites not supported.
+
+ * Session Renegotiation:
+       Client Renegotiation DoS Attack:   OK - Not vulnerable
+       Secure Renegotiation:              OK - Supported
+
+ * Elliptic Curve Key Exchange:
+       Supported curves:                  X25519, prime256v1, secp384r1
+       Rejected curves:                   X448, prime192v1, secp160k1, secp160r1, secp160r2, secp192k1, secp224k1, secp224r1, secp256k1, secp521r1, sect163k1, sect163r1, sect163r2, sect193r1, sect193r2, sect233k1, sect233r1, sect239k1, sect283k1, sect283r1, sect409k1, sect409r1, sect571k1, sect571r1
+
+ * TLS Extended Master Secret Extension:
+                                          OK - Supported
+
+ SCANS COMPLETED IN 47.316555 S
+ ------------------------------
+
+ COMPLIANCE AGAINST TLS CONFIGURATION
+ ------------------------------------
+
+    Checking results against Mozilla's "intermediate" configuration. See https://ssl-config.mozilla.org/ for more details.
+
+    otlocafe.com:443: FAILED - Not compliant.
+        * tls_curves: TLS curves {'prime256v1'} are supported, but should be rejected.
+----------------------------------------------------------------------
+
+[DNS LOOKUP (HOST)]
+otlocafe.com has address 88.222.243.27
+otlocafe.com has address 147.79.69.8
+otlocafe.com mail is handled by 10 mx2.hostinger.com.
+otlocafe.com mail is handled by 5 mx1.hostinger.com.
+----------------------------------------------------------------------
+
+[WHOIS INFO]
+Domain Name: OTLOCAFE.COM
+   Registry Domain ID: 3028544307_DOMAIN_COM-VRSN
+   Registrar WHOIS Server:
+   Registrar URL: http://www.hostinger.com
+   Updated Date: 2025-10-13T04:57:08Z
+   Creation Date: 2025-10-13T04:57:01Z
+   Registry Expiry Date: 2026-10-13T04:57:01Z
+   Registrar: HOSTINGER operations, UAB
+   Registrar IANA ID: 1636
+   Registrar Abuse Contact Email: abuse-tracker@hostinger.com
+   Registrar Abuse Contact Phone: +37064503378
+   Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+   Name Server: NS1.DNS-PARKING.COM
+   Name Server: NS2.DNS-PARKING.COM
+   DNSSEC: unsigned
+   URL of the ICANN Whois Inaccuracy Complaint Form: https://www.icann.org/wicf/
+>>> Last update of whois database: 2025-12-17T06:40:18Z <<<
+
+For more information on Whois status codes, please visit https://icann.org/epp
+
+NOTICE: The expiration date displayed in this record is the date the
+registrar's sponsorship of the domain name registration in the registry is
+currently set to expire. This date does not necessarily reflect the expiration
+date of the domain name registrant's agreement with the sponsoring
+registrar.  Users may consult the sponsoring registrar's Whois database to
+view the registrar's reported date of expiration for this registration.
+
+TERMS OF USE: You are not authorized to access or query our Whois
+database through the use of electronic processes that are high-volume and
+automated except as reasonably necessary to register domain names or
+modify existing registrations; the Data in VeriSign Global Registry
+Services' ("VeriSign") Whois database is provided by VeriSign for
+information purposes only, and to assist persons in obtaining information
+about or related to a domain name registration record. VeriSign does not
+guarantee its accuracy. By submitting a Whois query, you agree to abide
+by the following terms of use: You agree that you may use this Data only
+for lawful purposes and that under no circumstances will you use this Data
+to: (1) allow, enable, or otherwise support the transmission of mass
+unsolicited, commercial advertising or solicitations via e-mail, telephone,
+or facsimile; or (2) enable high volume, automated, electronic processes
+that apply to VeriSign (or its computer systems). The compilation,
+repackaging, dissemination or other use of this Data is expressly
+prohibited without the prior written consent of VeriSign. You agree not to
+use electronic processes that are automated and high-volume to access or
+query the Whois database except as reasonably necessary to register
+domain names or modify existing registrations. VeriSign reserves the right
+to restrict your access to the Whois database in its sole discretion to ensure
+operational stability.  VeriSign may restrict or terminate your access to the
+Whois database for failure to abide by these terms of use. VeriSign
+reserves the right to modify these terms at any time.
+
+The Registry database contains ONLY .COM, .NET, .EDU domains and
+Registrars.
+----------------------------------------------------------------------
+
+[SUBDOMAIN ENUMERATION (SUBFINDER)]
+www.otlocafe.com
+----------------------------------------------------------------------
+
+[SUBDOMAIN ENUMERATION (ASSETFINDER)]
+otlocafe.com
+www.otlocafe.com
+otlocafe.com
+----------------------------------------------------------------------
+
+[ALIVE SUBDOMAINS (HTTPX)]
+https://www.otlocafe.com [[32m200[0m]
+https://otlocafe.com [[32m200[0m]
+----------------------------------------------------------------------
+
+[DNS ENUMERATION (DNSRECON – STD + AGGRESSIVE)]
+2025-12-17T06:40:43.455450+0000 INFO Starting enumeration for domain: otlocafe.com
+2025-12-17T06:40:43.455722+0000 INFO std: Performing General Enumeration against: otlocafe.com...
+2025-12-17T06:40:43.803127+0000 INFO Checking for Zone Transfer for otlocafe.com name servers
+2025-12-17T06:40:43.803298+0000 INFO Resolving SOA Record
+2025-12-17T06:40:43.817399+0000 INFO 	 SOA ns1.dns-parking.com 162.159.24.201
+2025-12-17T06:40:43.817514+0000 INFO Resolving NS Records
+2025-12-17T06:40:43.831603+0000 INFO NS Servers found:
+2025-12-17T06:40:43.831731+0000 INFO 	 NS ns2.dns-parking.com 162.159.25.42
+2025-12-17T06:40:43.831774+0000 INFO 	 NS ns1.dns-parking.com 162.159.24.201
+2025-12-17T06:40:43.831810+0000 INFO Removing any duplicate NS server IP Addresses...
+2025-12-17T06:40:43.831845+0000 INFO  
+2025-12-17T06:40:43.831869+0000 INFO Trying NS server 162.159.24.201
+2025-12-17T06:40:43.843935+0000 INFO 162.159.24.201 Has port 53 TCP Open
+2025-12-17T06:40:43.864594+0000 ERROR Zone Transfer Failed (Zone transfer error: NOTIMP)
+2025-12-17T06:40:43.864750+0000 INFO  
+2025-12-17T06:40:43.864796+0000 INFO Trying NS server 162.159.25.42
+2025-12-17T06:40:43.873742+0000 INFO 162.159.25.42 Has port 53 TCP Open
+2025-12-17T06:40:43.891275+0000 ERROR Zone Transfer Failed (Zone transfer error: NOTIMP)
+2025-12-17T06:40:43.891468+0000 INFO Checking for Zone Transfer for otlocafe.com name servers
+2025-12-17T06:40:43.891531+0000 INFO Resolving SOA Record
+2025-12-17T06:40:43.895112+0000 INFO 	 SOA ns1.dns-parking.com 162.159.24.201
+2025-12-17T06:40:43.895217+0000 INFO Resolving NS Records
+2025-12-17T06:40:43.898793+0000 INFO NS Servers found:
+2025-12-17T06:40:43.898892+0000 INFO 	 NS ns2.dns-parking.com 162.159.25.42
+2025-12-17T06:40:43.898933+0000 INFO 	 NS ns1.dns-parking.com 162.159.24.201
+2025-12-17T06:40:43.898968+0000 INFO Removing any duplicate NS server IP Addresses...
+2025-12-17T06:40:43.899004+0000 INFO  
+2025-12-17T06:40:43.899039+0000 INFO Trying NS server 162.159.24.201
+2025-12-17T06:40:43.907687+0000 INFO 162.159.24.201 Has port 53 TCP Open
+2025-12-17T06:40:43.927201+0000 ERROR Zone Transfer Failed (Zone transfer error: NOTIMP)
+2025-12-17T06:40:43.927370+0000 INFO  
+2025-12-17T06:40:43.927421+0000 INFO Trying NS server 162.159.25.42
+2025-12-17T06:40:43.936034+0000 INFO 162.159.25.42 Has port 53 TCP Open
+2025-12-17T06:40:43.955306+0000 ERROR Zone Transfer Failed (Zone transfer error: NOTIMP)
+2025-12-17T06:40:43.993664+0000 ERROR No answer for DNSSEC query for otlocafe.com
+2025-12-17T06:40:43.997237+0000 INFO 	 SOA ns1.dns-parking.com 162.159.24.201
+2025-12-17T06:40:44.001790+0000 INFO 	 NS ns2.dns-parking.com 162.159.25.42
+2025-12-17T06:40:44.053451+0000 INFO 	 NS ns1.dns-parking.com 162.159.24.201
+2025-12-17T06:40:44.182565+0000 INFO 	 MX mx2.hostinger.com 172.65.182.103
+2025-12-17T06:40:44.182695+0000 INFO 	 MX mx1.hostinger.com 172.65.182.103
+2025-12-17T06:40:44.184382+0000 INFO 	 A otlocafe.com 88.222.243.27
+2025-12-17T06:40:44.184484+0000 INFO 	 A otlocafe.com 147.79.69.8
+2025-12-17T06:40:44.349933+0000 INFO 	 TXT otlocafe.com v=spf1 include:_spf.mail.hostinger.com ~all
+2025-12-17T06:40:44.350074+0000 INFO 	 TXT _dmarc.otlocafe.com v=DMARC1; p=none
+2025-12-17T06:40:45.035409+0000 INFO Enumerating SRV Records
+2025-12-17T06:40:47.051027+0000 ERROR No SRV Records Found for otlocafe.com
+2025-12-17T06:40:47.051217+0000 INFO Performing Crt.sh Search Enumeration
+2025-12-17T06:40:47.669763+0000 INFO Completed enumeration for domain: otlocafe.com
+----------------------------------------------------------------------
+
+[DNS BRUTEFORCE (DNSENUM)]
+AXFR record query failed: NOTIMP
+AXFR record query failed: NOTIMP
+dnsenum VERSION:1.3.1
+
+-----   otlocafe.com   -----
+
+
+Host's addresses:
+__________________
+
+otlocafe.com.                            44       IN    A        88.222.243.27
+otlocafe.com.                            44       IN    A        147.79.69.8
+
+
+Name Servers:
+______________
+
+ns1.dns-parking.com.                     86392    IN    A        162.159.24.201
+ns2.dns-parking.com.                     86392    IN    A        162.159.25.42
+
+
+Mail (MX) Servers:
+___________________
+
+mx2.hostinger.com.                       291      IN    A        172.65.182.103
+mx1.hostinger.com.                       217      IN    A        172.65.182.103
+
+
+Trying Zone Transfers and getting Bind Versions:
+_________________________________________________
+
+
+Trying Zone Transfer for otlocafe.com on ns1.dns-parking.com ... 
+
+Trying Zone Transfer for otlocafe.com on ns2.dns-parking.com ... 
+
+
+Brute forcing with /usr/share/dnsenum/dns.txt:
+_______________________________________________
+
+autodiscover.otlocafe.com.               300      IN    CNAME    autodiscover.mail.hostinger.com.
+autodiscover.mail.hostinger.com.         3600     IN    A        34.120.251.119
+ftp.otlocafe.com.                        1800     IN    A        145.79.28.191
+www.otlocafe.com.                        300      IN    CNAME    www.otlocafe.com.cdn.hstgr.net.
+www.otlocafe.com.cdn.hstgr.net.          300      IN    A        93.127.173.134
+www.otlocafe.com.cdn.hstgr.net.          300      IN    A        91.108.106.175
+www.otlocafe.com.cdn.hstgr.net.          300      IN    A        88.222.243.227
+www.otlocafe.com.cdn.hstgr.net.          300      IN    A        147.79.69.251
+
+
+otlocafe.com class C netranges:
+________________________________
+
+ 88.222.243.0/24
+ 145.79.28.0/24
+ 147.79.69.0/24
+
+
+otlocafe.com ip blocks:
+________________________
+
+ 88.222.243.27/32
+ 145.79.28.191/32
+ 147.79.69.8/32
+
+done.
+----------------------------------------------------------------------
+
+[DOCUMENT METADATA HARVESTING (METAGOOFIL)]
+[*] Searching for 3 .pdf files and waiting 30.0 seconds between searches
+[*] Results: 0 .pdf files found
+[*] Searching for 3 .doc files and waiting 30.0 seconds between searches
+[*] Results: 0 .doc files found
+[*] Searching for 3 .xls files and waiting 30.0 seconds between searches
+[*] Results: 0 .xls files found
+[*] Searching for 3 .ppt files and waiting 30.0 seconds between searches
+[*] Results: 0 .ppt files found
+[*] Searching for 3 .docx files and waiting 30.0 seconds between searches
+[*] Results: 0 .docx files found
+[*] Searching for 3 .xlsx files and waiting 30.0 seconds between searches
+[*] Results: 0 .xlsx files found
+[*] Searching for 3 .pptx files and waiting 30.0 seconds between searches
+[*] Results: 0 .pptx files found
+[+] Done!
+----------------------------------------------------------------------
+
+[FAST PORT DISCOVERY (NAABU – TOP 10K PORTS)]
+[[1;31mFTL[0m] Could not create runner: could not parse ports: invalid top ports option
+----------------------------------------------------------------------
+
+[SERVICE ENUMERATION (NMAP – SMART)]
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-12-17 06:50 UTC
+Nmap scan report for otlocafe.com (93.127.173.43)
+Host is up, received user-set (0.023s latency).
+Other addresses for otlocafe.com (not scanned): 88.222.243.245
+Not shown: 998 filtered tcp ports (no-response)
+Some closed ports may be reported as filtered due to --defeat-rst-ratelimit
+PORT    STATE SERVICE    REASON         VERSION
+80/tcp  open  tcpwrapped syn-ack ttl 63
+443/tcp open  tcpwrapped syn-ack ttl 63
+|_http-server-header: hcdn
+| ssl-cert: Subject: commonName=otlocafe.com
+| Subject Alternative Name: DNS:otlocafe.com, DNS:www.otlocafe.com
+| Not valid before: 2025-12-12T03:17:00
+|_Not valid after:  2026-03-12T03:16:59
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 25.44 seconds
+----------------------------------------------------------------------
+
+[URL & ENDPOINT CRAWLING (KATANA – SMART)]
+flag provided but not defined: -ps
+----------------------------------------------------------------------
+
+End of Report
+======================================================================

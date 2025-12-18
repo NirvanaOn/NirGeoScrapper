@@ -68,6 +68,26 @@ def clean_image_url(url: str):
     url = re.sub(r"w\d+-h\d+", "w2000-h2000", url)
     return url
 
+def parse_reviews_count(text: str) -> int:
+    if not text:
+        return 0
+
+    text = text.lower().replace(",", "").strip()
+
+    match = re.search(r'([\d.]+)\s*([km]?)', text)
+    if not match:
+        return 0
+
+    number = float(match.group(1))
+    suffix = match.group(2)
+
+    if suffix == "k":
+        number *= 1_000
+    elif suffix == "m":
+        number *= 1_000_000
+
+    return int(number)
+
 
 # ================= SCRAPER =================
 
@@ -147,7 +167,8 @@ def scrape_google_maps(
                 place_name    = get_text(page, 'h1.DUwDvf')
                 category      = get_text(page, 'button[jsaction*="category"]')
                 rating        = get_text(page, 'div.fontDisplayLarge')
-                reviews_count = get_text(page, 'button.GQjSyb span')
+                raw_reviews = get_text(page, 'button.GQjSyb span')
+                reviews_count = parse_reviews_count(raw_reviews)
 
                 address     = get_text(page, 'button[data-item-id="address"] .Io6YTe')
                 plus_code   = get_text(page, 'button[data-item-id="oloc"] .Io6YTe')
