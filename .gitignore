@@ -1,21 +1,41 @@
-# Python virtual environment
+# ======================
+# Python virtual env
+# ======================
 .venv/
 venv/
 
+# ======================
 # Python cache
+# ======================
 __pycache__/
 *.pyc
 
+# ======================
 # IDE configs
+# ======================
 .idea/
 .vscode/
 
+# ======================
 # OS files
+# ======================
 .DS_Store
 
+# ======================
 # Generated output
+# ======================
 data/
 scraper/data/
 
-# Excel temp files
+# ======================
+# Excel output
+# ======================
+*.xlsx
+*.xls
 ~$*.xlsx
+
+# ======================
+# Playwright
+# ======================
+.playwright/
+playwright-report/
