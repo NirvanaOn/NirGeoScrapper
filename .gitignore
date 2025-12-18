@@ -12,3 +12,10 @@ __pycache__/
 
 # OS files
 .DS_Store
+
+# Generated output
+data/
+scraper/data/
+
+# Excel temp files
+~$*.xlsx
