@@ -6,16 +6,54 @@ from excel import ExcelWriter
 from utils import flatten_for_excel
 from colorama import Fore, Style, init
 init(autoreset=True)
+import random
+import shutil
+import pyfiglet
+from rich.console import Console
+from rich.panel import Panel
+from rich.text import Text
 
+
+
+BANNER_FONTS = [
+    "banner3", "ansi_shadow", "univers", "nancyj", "big",
+    "block", "epic", "doom", "slant", "smslant", "shadow",
+    "speed", "lean", "standard", "bigfig", "chunky",
+    "ogre", "rectangles"
+]
+
+console = Console()
+VERSION = "1.0.0"
 
 def color_text(text, color):
     return f"{color}{text}{Style.RESET_ALL}"
 
 
 def print_banner():
-    print(color_text("\nNirGeoScrape", Fore.CYAN))
-    print(color_text("Location & Place Data Collection Tool", Fore.WHITE))
-    print(color_text("-" * 40, Fore.BLUE))
+    term_width = shutil.get_terminal_size((100, 20)).columns
+    font = random.choice(BANNER_FONTS)
+
+    ascii_logo = pyfiglet.figlet_format(
+        "NirGeoScrapper",
+        font=font,
+        width=term_width
+    )
+
+    banner = Text()
+    banner.append(ascii_logo, style="bold cyan")
+    banner.append("\nLocation & Place Data Collection Tool\n", style="bold white")
+    banner.append("Author: Nirvana | OSINT • Recon • Maps\n", style="yellow")
+    banner.append(f"Version: {VERSION}\n", style="dim cyan")
+    banner.append("Public data only • Use responsibly", style="dim")
+
+    console.print(
+        Panel(
+            banner,
+            border_style="bright_blue",
+            padding=(1, 4),
+            expand=False
+        )
+    )
 
 # ================= AVAILABLE FIELDS =================
 
@@ -44,17 +82,17 @@ def main():
     print_banner()
 
     parser = argparse.ArgumentParser(
-        prog="NirGeoScrape",
+        prog="NirGeoScrapper",
         description=(
-            "NirGeoScrape collects publicly available business and location data\n"
+            "NirGeoScrapper collects publicly available business and location data\n"
             "from map search results and exports them into a structured Excel file."
         ),
         epilog=(
             "Examples:\n"
-            "  python main.py -s \"Cafe in Surat\"\n"
-            "  python main.py -s \"Hospital in Ahmedabad\" --total 50\n"
-            "  python main.py -s \"Restaurant in Mumbai\" --auto --slow\n"
-            "  python main.py --list-fields\n"
+            "  python NirGeoScrapper.py -s \"Cafe in Surat\"\n"
+            "  python NirGeoScrapper.py -s \"Hospital in Ahmedabad\" --total 50\n"
+            "  python NirGeoScrapper.py -s \"Restaurant in Mumbai\" --auto --slow\n"
+            "  python NirGeoScrapper.py --list-fields\n"
         ),
         formatter_class=argparse.RawTextHelpFormatter
     )
