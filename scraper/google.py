@@ -54,9 +54,7 @@ def extract_lat_lng(url: str):
 
 
 def clean_image_url(url: str):
-    """
-    Normalize Google image URLs and drop junk thumbnails.
-    """
+
     if not url:
         return None
 
@@ -64,7 +62,7 @@ def clean_image_url(url: str):
     if "w120" in url or "h120" in url:
         return None
 
-    # prefer high-res
+
     url = re.sub(r"w\d+-h\d+", "w2000-h2000", url)
     return url
 
@@ -88,8 +86,6 @@ def parse_reviews_count(text: str) -> int:
 
     return int(number)
 
-
-# ================= SCRAPER =================
 
 def scrape_google_maps(
     search_query,

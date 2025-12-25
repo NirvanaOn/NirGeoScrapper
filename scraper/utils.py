@@ -2,14 +2,6 @@ import json
 
 
 def flatten_for_excel(place: dict, max_images: int = 20) -> dict:
-    """
-    Convert nested scraper data into Excel-safe flat columns.
-
-    Rules:
-    - Images -> Image 1, Image 2, ...
-    - List of dicts -> readable multiline text
-    - Dicts -> formatted JSON
-    """
 
     flat = {}
 
