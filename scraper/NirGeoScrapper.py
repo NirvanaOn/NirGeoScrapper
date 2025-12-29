@@ -144,7 +144,7 @@ def main():
         "-s", "--search",
         help=(
             "Search query used to find places on the map.\n"
-            "Example: \"Cafe in Surat\", \"Hospitals in Ahmedabad\""
+            "Example: \"Cafe in XXXXX\", \"Hospitals in XXXXXX\""
         )
     )
 
