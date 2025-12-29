@@ -449,7 +449,11 @@ def main():
                 flat_data = flatten_for_excel(place)
                 filtered_output = {
                     k: v for k, v in flat_data.items()
-                    if k in selected_fields or k in ("Name", "Address", "Maps URL")
+                    if (
+                            k in selected_fields
+                            or k.startswith("Image ")
+                            or k in ("Name", "Address", "Maps URL")
+                    )
                 }
 
                 if writer.write_row(filtered_output):
