@@ -104,9 +104,9 @@ def scrape_google_maps(
         try:
             # ---------- OPEN MAPS ----------
             page.goto("https://www.google.com/maps", timeout=60000)
-            page.wait_for_selector("#searchboxinput", timeout=15000)
+            page.wait_for_selector("input#UGojuc", timeout=15000)
 
-            page.fill("#searchboxinput", search_query)
+            page.fill("input#UGojuc", search_query)
             page.keyboard.press("Enter")
 
             page.wait_for_selector('//a[contains(@href,"/maps/place")]', timeout=20000)
@@ -163,7 +163,7 @@ def scrape_google_maps(
                 place_name    = get_text(page, 'h1.DUwDvf')
                 category      = get_text(page, 'button[jsaction*="category"]')
                 rating        = get_text(page, 'div.fontDisplayLarge')
-                raw_reviews = get_text(page, 'button.GQjSyb span')
+                raw_reviews = get_text(page, 'button.GQjSyb')
                 reviews_count = parse_reviews_count(raw_reviews)
 
                 address     = get_text(page, 'button[data-item-id="address"] .Io6YTe')
@@ -173,7 +173,8 @@ def scrape_google_maps(
                 phone   = get_text(page, 'button[data-item-id*="phone"] .Io6YTe')
                 website = get_attr(page, 'a[data-item-id*="authority"]', 'href')
 
-                open_status = get_text(page, 'button[data-item-id^="oh"] .Io6YTe')
+                open_status = get_text(page, 'span.ZDu9vd')
+
 
                 latitude, longitude = extract_lat_lng(current_url)
 
@@ -216,7 +217,7 @@ def scrape_google_maps(
                 for i in range(review_blocks.count()):
                     block = review_blocks.nth(i)
                     reviewers.append({
-                        "name": get_text(block, 'div.d4r55.fontTitleMedium'),
+                        "name": get_text(block, 'div.d4r55'),
                         "profile_url": get_attr(block, 'button.al6Kxe', 'data-href')
                     })
 
